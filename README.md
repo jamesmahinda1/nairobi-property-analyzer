@@ -1,7 +1,13 @@
 # Nairobi Property Market Analyzer
 
-Capstone project — Data Science Pathway, Zindua School.
+An interactive Streamlit dashboard that pulls live property listings from across Nairobi, cleans and structures them, then turns them into clear visuals showing how prices, sizes, and rental yields compare across the city's neighborhoods. Built as the capstone project for the Data Science Pathway at Zindua School.
 
-See [PROPOSAL.md](PROPOSAL.md) for the project proposal.
+**Tech stack:** Python · Pandas · NumPy · SQLite · GeoPandas · Plotly · Streamlit
 
-_Project under active development — full README coming soon._
+**Status:** Under active development — not yet ready to run.
+
+For the full project proposal — problem statement, research questions, data sources, methodology, and final deliverables — see [PROPOSAL.md](PROPOSAL.md).
+
+---
+
+**Author:** James Mahinda — Data Science Pathway, Zindua School (2026)
