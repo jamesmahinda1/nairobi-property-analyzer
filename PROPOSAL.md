@@ -1,6 +1,6 @@
 # Nairobi Property Market Analyzer
 
-**Capstone Project — Data Science Pathway, Zindua School**
+**Capstone Project — Zindua School**
 **By:** James Mahinda
 
 ---
@@ -57,4 +57,4 @@ The deliverable is a Streamlit app with the following tabs:
 
 ## Author
 
-James Mahinda — Data Science Pathway, Zindua School (2026)
+James Mahinda — Zindua School (2026)

@@ -1,6 +1,6 @@
 # Nairobi Property Market Analyzer
 
-An interactive Streamlit dashboard that pulls live property listings from across Nairobi, cleans and structures them, then turns them into clear visuals showing how prices, sizes, and rental yields compare across the city's neighborhoods. Built as the capstone project for the Data Science Pathway at Zindua School.
+An interactive Streamlit dashboard that pulls live property listings from across Nairobi, cleans and structures them, then turns them into clear visuals showing how prices, sizes, and rental yields compare across the city's neighborhoods. Built as my capstone project at Zindua School.
 
 **Tech stack:** Python · Pandas · NumPy · SQLite · GeoPandas · Plotly · Streamlit
 
@@ -10,4 +10,4 @@ For the full project proposal — problem statement, research questions, data so
 
 ---
 
-**Author:** James Mahinda — Data Science Pathway, Zindua School (2026)
+**Author:** James Mahinda — Zindua School (2026)
