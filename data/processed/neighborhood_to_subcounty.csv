@@ -1,0 +1,65 @@
+# Neighborhood -> sub-county lookup for Nairobi listings.
+# Method: each neighborhood was geocoded via OpenStreetMap Nominatim, then
+# spatial-joined against Nairobi sub-county polygons from GADM v4.1
+# (https://gadm.org/), level 2 = constituency.
+#
+# Refined geocoding queries used for ambiguous names:
+#   Westlands Area    -> queried as "Westlands, Nairobi, Kenya"
+#   Riverside         -> queried as "Riverside Drive, Nairobi, Kenya"
+#   Buruburu          -> queried as "Buruburu Estate, Nairobi, Kenya"
+#
+# Manual override (point fell on a constituency boundary):
+#   Dagoretti Corner  -> DagorettiSouth (common usage; spatial centroid fell
+#                       in Kibra at the Ngong Road / Naivasha Road junction)
+#
+# Excluded: Joska (real Joska is in Machakos county; Nominatims default match
+#           returns a place inside Nairobi which is incorrect).
+# Generated: 2026-05-07
+neighborhood,sub_county,lat,lon,in_nairobi
+Brookside,DagorettiNorth,-1.2589195,36.7931289,True
+Buruburu,Makadara,-1.2837,36.8704,True
+Dagoretti Corner,DagorettiSouth,-1.2990863,36.7587519,True
+Dennis Pritt,DagorettiNorth,-1.2855195,36.7924978,True
+Donholm,EmbakasiEast,-1.2992254,36.8886888,True
+Embakasi,EmbakasiEast,-1.3076101,36.934159,True
+Garden Estate,Roysambu,-1.2219361,36.8633024,True
+General Mathenge,Westlands,-1.2539861,36.7961791,True
+Gigiri,Westlands,-1.2325029,36.8072952,True
+Hill View,Westlands,-1.2434756,36.7769136,True
+Hurlingham,DagorettiNorth,-1.2914062,36.7953128,True
+Kahawa Sukari,,-1.1909946,36.9287774,False
+Karen,Langata,-1.3283746,36.7049676,True
+Karen Hardy,Langata,-1.3638925,36.7364788,True
+Kiambu Road,Roysambu,-1.2165472,36.8355626,True
+Kileleshwa,DagorettiNorth,-1.2767338,36.7879011,True
+Kilimani,DagorettiNorth,-1.2960146,36.7817791,True
+Kitisuru,Westlands,-1.2403787,36.77103,True
+Kyuna,Westlands,-1.2512727,36.7801124,True
+Lake View,Westlands,-1.2421713,36.7690963,True
+Langata,Langata,-1.3708746,36.8184145,True
+Lavington,DagorettiNorth,-1.2740678,36.7762269,True
+Loresho,Westlands,-1.2568211,36.7521131,True
+Lower Kabete,Westlands,-1.2403033,36.7523519,True
+Mombasa Road,EmbakasiEast,-1.3591676,36.907942,True
+Mountain View,Westlands,-1.2694782,36.7389066,True
+Muthaiga,Westlands,-1.2530907,36.8301036,True
+Nairobi West,Langata,-1.3087022,36.8230975,True
+Naivasha Road,DagorettiSouth,-1.2663895,36.7225734,True
+Ngong Road,Kibra,-1.2979071,36.8033629,True
+Nyari,Westlands,-1.230071,36.7882606,True
+Parklands,Westlands,-1.2630616,36.8106288,True
+Rhapta Road,DagorettiNorth,-1.2644926,36.7898553,True
+Ridgeways,Roysambu,-1.2248194,36.843321,True
+Riverside,DagorettiNorth,-1.2687,36.78,True
+Rosslyn,Westlands,-1.2178086,36.7938653,True
+Runda,Westlands,-1.2182119,36.8089887,True
+South B,Starehe,-1.3141724,36.8376708,True
+South C,Langata,-1.3188367,36.8278221,True
+Spring Valley,Westlands,-1.2533393,36.7929369,True
+State House,DagorettiNorth,-1.2828612,36.802136,True
+Thigiri,Westlands,-1.2404231,36.7913539,True
+Thika Road,Ruaraka,-1.2441888,36.8678821,True
+Upper Hill,Kibra,-1.2941162,36.8129064,True
+Valley Arcade,DagorettiNorth,-1.2909694,36.7703564,True
+Waiyaki Way,DagorettiNorth,-1.2611223,36.795599,True
+Westlands Area,Westlands,-1.2465281,36.7860759,True
