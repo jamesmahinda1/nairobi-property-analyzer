@@ -4,6 +4,25 @@ import sqlite3
 import plotly.express as px
 import plotly.graph_objects as go
 import json
+import os
+
+
+def ensure_db():
+    # On a fresh deploy property.db doesn't exist (it's gitignored).
+    # Rebuild it from the cleaned CSV so the app works first try.
+    if os.path.exists("data/property.db"):
+        return
+    os.makedirs("data", exist_ok=True)
+    csv_df = pd.read_csv("data/processed/listings_clean.csv")
+    csv_df["furnished"] = csv_df["furnished"].astype(bool).astype(int)
+    conn = sqlite3.connect("data/property.db")
+    with open("sql/schema.sql") as f:
+        conn.executescript(f.read())
+    csv_df.to_sql("listings", conn, if_exists="append", index=False)
+    conn.close()
+
+
+ensure_db()
 
 st.set_page_config(page_title="Nairobi Property Market Analyzer", layout="wide")
 st.title("Nairobi Property Market Analyzer")
