@@ -1,5 +1,7 @@
-# _build_geo_lookup.py — temp script. Run once.
-# Output: data/processed/neighborhood_to_subcounty.csv
+# Builds the neighborhood -> sub-county lookup for the maps.
+# Geocodes each neighborhood via OSM Nominatim, then spatial-joins
+# against the Nairobi sub-county polygons. Output:
+# data/processed/neighborhood_to_subcounty.csv
 
 import pandas as pd
 import geopandas as gpd

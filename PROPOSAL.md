@@ -23,7 +23,7 @@ Property listings in Nairobi are scattered across multiple websites with no easy
 
 ## Data Sources
 
-- **Property listings** scraped from Kenyan property portals (BuyRentKenya, Property24, Jiji)
+- **Property listings** scraped from BuyRentKenya (the primary Kenyan property portal used for this project)
 - **Nairobi sub-county boundaries** from KNBS / open geographic data, used for the map layer
 
 ## What I'm Doing — Process

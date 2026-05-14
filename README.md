@@ -4,7 +4,7 @@ An interactive Streamlit dashboard that pulls live property listings from across
 
 **Tech stack:** Python · Pandas · NumPy · SQLite · GeoPandas · Plotly · Streamlit
 
-**Status:** Under active development — not yet ready to run.
+**Status:** Complete. Dashboard deployed on Streamlit Cloud.
 
 For the full project proposal — problem statement, research questions, data sources, methodology, and final deliverables — see [PROPOSAL.md](PROPOSAL.md).
 
