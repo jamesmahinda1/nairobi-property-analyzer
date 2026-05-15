@@ -260,7 +260,7 @@ with tab3:
 
 with tab4:
     st.header("Best Value — Apartment Rental Yields")
-    st.caption("Bedroom-matched gross yields. Apartments only, unfurnished rents, n≥10 each side.")
+    st.caption("Bedroom-matched gross yields. Apartments only, unfurnished rents, n≥5 each side.")
 
     apt = df[df["property_subtype"] == "apartment"]
     sale_med = apt[apt["type"] == "sale"].groupby(["neighborhood", "bedrooms"]).agg(
@@ -270,7 +270,7 @@ with tab4:
         ["neighborhood", "bedrooms"]
     ).agg(median_rent=("price", "median"), n_rent=("price", "count"))
     yields = sale_med.join(rent_med, how="inner").reset_index()
-    yields = yields[(yields["n_sale"] >= 10) & (yields["n_rent"] >= 10)]
+    yields = yields[(yields["n_sale"] >= 5) & (yields["n_rent"] >= 5)]
     yields["annual_yield"] = (yields["median_rent"] * 12) / yields["median_sale"]
     yields = yields.sort_values(["bedrooms", "annual_yield"], ascending=[True, False])
 
