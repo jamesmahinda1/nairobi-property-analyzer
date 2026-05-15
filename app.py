@@ -197,6 +197,21 @@ with tab2:
             hovertemplate="<b>%{location}</b><br>" + label + ": %{z:.1f}<br>n=%{customdata[0]}<extra></extra>",
         ))
 
+        # Label only the coloured polygons (avoids the central cluster overlap)
+        from shapely.geometry import shape
+        with_data = set(agg["sub_county"])
+        label_pts = [(shape(f["geometry"]).centroid, f["properties"]["sub_county"])
+                     for f in geojson["features"]
+                     if f["properties"]["sub_county"] in with_data]
+        fig.add_trace(go.Scattergeo(
+            lon=[c.x for c, _ in label_pts],
+            lat=[c.y for c, _ in label_pts],
+            text=[n for _, n in label_pts],
+            mode="text", showlegend=False,
+            textfont=dict(size=11, color="#1A1F2E"),
+            hoverinfo="skip",
+        ))
+
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0}, height=600)
     st.plotly_chart(fig, use_container_width=True)
