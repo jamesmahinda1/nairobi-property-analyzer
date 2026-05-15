@@ -165,7 +165,7 @@ with tab2:
         agg["value"] = agg["median"] / 1e3
         label = "KES thousands per m²"
 
-    agg = agg[agg["count"] >= 5]
+    agg = agg[agg["count"] >= 3]
 
     # Always draw the full Nairobi outline first (all 17 sub-counties) in grey
     fig = go.Figure()
