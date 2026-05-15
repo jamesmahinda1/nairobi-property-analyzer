@@ -184,6 +184,20 @@ with tab2:
 
     # Overlay coloured sub-counties (only those with enough data)
     if len(agg):
+        # Build human-readable hover text per row depending on the metric
+        hover_texts = []
+        for _, row in agg.iterrows():
+            sc = row["sub_county"]
+            n = int(row["count"])
+            v = row["value"]
+            if map_metric == "Median sale price":
+                line = f"Median sale price: KES {v:.1f}M"
+            elif map_metric == "Median monthly rent":
+                line = f"Median monthly rent: KES {v:,.0f}K"
+            else:
+                line = f"Median sale price per m²: KES {v:,.0f}K"
+            hover_texts.append(f"<b>{sc}</b><br>{line}<br>{n} listings")
+
         fig.add_trace(go.Choropleth(
             geojson=geojson,
             locations=agg["sub_county"],
@@ -193,8 +207,8 @@ with tab2:
             marker_line_color="white",
             marker_line_width=1.5,
             colorbar=dict(title=label, thickness=15, len=0.7),
-            customdata=agg[["count"]].values,
-            hovertemplate="<b>%{location}</b><br>" + label + ": %{z:.1f}<br>n=%{customdata[0]}<extra></extra>",
+            text=hover_texts,
+            hovertemplate="%{text}<extra></extra>",
         ))
 
         # Label only the coloured polygons (avoids the central cluster overlap)
